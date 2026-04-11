@@ -22,3 +22,24 @@ const observer = new IntersectionObserver(
 );
 
 revealTargets.forEach((element) => observer.observe(element));
+
+const showcaseTabs = document.querySelectorAll(".showcase-tab");
+const showcaseCards = document.querySelectorAll(".showcase-card");
+
+showcaseTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const filter = tab.dataset.filter;
+
+    showcaseTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+    });
+
+    showcaseCards.forEach((card) => {
+      const categories = (card.dataset.category || "").split(" ");
+      const shouldShow = filter === "all" || categories.includes(filter);
+      card.classList.toggle("is-hidden", !shouldShow);
+    });
+  });
+});

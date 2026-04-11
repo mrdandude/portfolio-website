@@ -216,6 +216,32 @@ ul {
   font-size: 0.93rem;
 }
 
+.showcase-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-tab {
+  appearance: none;
+  border: 1px solid #d8d2ca;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.showcase-tab.is-active,
+.showcase-tab[aria-selected="true"] {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -250,6 +276,10 @@ ul {
 .showcase-copy p,
 .showcase-copy a {
   font-size: 0.9rem;
+}
+
+.showcase-card.is-hidden {
+  display: none;
 }
 
 .reveal {

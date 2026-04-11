@@ -180,8 +180,15 @@
         <p>Preview and open a few of the decks, studies, and design documents from your portfolio work.</p>
       </div>
 
+      <div class="showcase-tabs" role="tablist" aria-label="Portfolio categories">
+        <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="design">Design</button>
+        <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="strategy">Strategy</button>
+        <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="technical">Technical Work</button>
+      </div>
+
       <div class="showcase-grid">
-        <article class="showcase-card">
+        <article class="showcase-card" data-category="design technical">
           <a class="showcase-thumb" href="assets/work/navify.pdf" target="_blank" rel="noreferrer">
             <img src="assets/work/navify.png" alt="Preview of Navify portfolio PDF">
           </a>
@@ -192,7 +199,7 @@
           </div>
         </article>
 
-        <article class="showcase-card">
+        <article class="showcase-card" data-category="strategy technical">
           <a class="showcase-thumb" href="assets/work/digital-touchpoints-analysis.pdf" target="_blank" rel="noreferrer">
             <img src="assets/work/digital-touchpoints-analysis.png" alt="Preview of Digital Touchpoints Analysis PDF">
           </a>
@@ -203,7 +210,7 @@
           </div>
         </article>
 
-        <article class="showcase-card">
+        <article class="showcase-card" data-category="strategy technical">
           <a class="showcase-thumb" href="assets/work/website-engagement-study.pdf" target="_blank" rel="noreferrer">
             <img src="assets/work/website-engagement-study.png" alt="Preview of Website Engagement Study PDF">
           </a>
@@ -214,7 +221,7 @@
           </div>
         </article>
 
-        <article class="showcase-card">
+        <article class="showcase-card" data-category="design">
           <a class="showcase-thumb" href="assets/work/final-green-wall.pdf" target="_blank" rel="noreferrer">
             <img src="assets/work/final-green-wall.png" alt="Preview of Final Green Wall PDF">
           </a>
@@ -225,7 +232,7 @@
           </div>
         </article>
 
-        <article class="showcase-card">
+        <article class="showcase-card" data-category="design technical">
           <a class="showcase-thumb" href="assets/work/clerestory2.pdf" target="_blank" rel="noreferrer">
             <img src="assets/work/clerestory2.png" alt="Preview of Clerestory PDF">
           </a>
