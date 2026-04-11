@@ -1,5 +1,5 @@
 const revealTargets = document.querySelectorAll(
-  ".work-item, .side-section"
+  ".work-item, .side-section, .showcase-card"
 );
 
 revealTargets.forEach((element) => {

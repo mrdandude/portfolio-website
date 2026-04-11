@@ -197,6 +197,61 @@ ul {
   font-size: 0.93rem;
 }
 
+.showcase-section {
+  margin-top: 4rem;
+}
+
+.showcase-heading {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-heading h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.showcase-heading p {
+  max-width: 42rem;
+  font-size: 0.93rem;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.showcase-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.showcase-thumb {
+  display: block;
+  background: #ebe7e0;
+}
+
+.showcase-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.showcase-copy {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.showcase-copy h3 {
+  font-size: 0.98rem;
+}
+
+.showcase-copy p,
+.showcase-copy a {
+  font-size: 0.9rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -238,6 +293,10 @@ ul {
   .work-meta,
   .mini-year {
     padding-top: 0;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
   }
 
 }
