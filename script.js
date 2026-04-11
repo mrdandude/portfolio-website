@@ -1,0 +1,24 @@
+const revealTargets = document.querySelectorAll(
+  ".section, .metrics article, .hero-card, .project-card, .contact-card, .skills-card"
+);
+
+revealTargets.forEach((element) => {
+  element.classList.add("reveal");
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.18,
+    rootMargin: "0px 0px -40px 0px",
+  }
+);
+
+revealTargets.forEach((element) => observer.observe(element));
