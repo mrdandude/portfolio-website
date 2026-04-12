@@ -278,17 +278,30 @@ ul {
 .showcase-card {
   display: grid;
   gap: 0.8rem;
+  transition: transform 180ms ease;
+}
+
+.showcase-card:hover,
+.showcase-card:focus-within {
+  transform: translateY(-4px);
 }
 
 .showcase-thumb {
   display: block;
   background: #ebe7e0;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .showcase-thumb img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.showcase-card:hover .showcase-thumb,
+.showcase-card:focus-within .showcase-thumb {
+  background: #e2dbd1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .showcase-copy {
