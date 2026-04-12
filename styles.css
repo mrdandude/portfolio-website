@@ -41,6 +41,11 @@ a:focus-visible {
   text-underline-offset: 0.18em;
 }
 
+::selection {
+  background: var(--highlight);
+  color: var(--text);
+}
+
 .masthead-links a:hover,
 .masthead-links a:focus-visible,
 .contact-links a:hover,
