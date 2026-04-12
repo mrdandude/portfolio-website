@@ -2,6 +2,35 @@ const revealTargets = document.querySelectorAll(
   ".work-item, .side-section, .showcase-card"
 );
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const tagline = document.querySelector(".tagline");
+
+if (tagline) {
+  const fullText = tagline.dataset.text || "";
+
+  if (prefersReducedMotion) {
+    tagline.textContent = fullText;
+  } else {
+    let index = 0;
+    tagline.classList.add("is-typing");
+
+    const typeText = () => {
+      tagline.textContent = fullText.slice(0, index);
+      index += 1;
+
+      if (index <= fullText.length) {
+        window.setTimeout(typeText, 28);
+      } else {
+        window.setTimeout(() => {
+          tagline.classList.remove("is-typing");
+        }, 700);
+      }
+    };
+
+    typeText();
+  }
+}
+
 revealTargets.forEach((element) => {
   element.classList.add("reveal");
 });

@@ -94,6 +94,17 @@ ul {
   font-size: 0.9rem;
 }
 
+.tagline.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.95em;
+  margin-left: 0.16rem;
+  background: currentColor;
+  vertical-align: -0.08em;
+  animation: blink-caret 900ms steps(1) infinite;
+}
+
 .masthead-links {
   display: flex;
   flex-wrap: wrap;
@@ -299,6 +310,24 @@ ul {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes blink-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline.is-typing::after {
+    animation: none;
+  }
 }
 
 @media (max-width: 980px) {
