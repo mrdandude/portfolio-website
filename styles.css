@@ -4,6 +4,7 @@
   --text: #111111;
   --muted: #706a63;
   --faint: #b1aaa2;
+  --highlight: #a8ff72;
   --dark: #2d2f34;
   --charcoal: #454545;
   --red-a: #6c1f1b;
@@ -38,6 +39,14 @@ a:hover,
 a:focus-visible {
   text-decoration: underline;
   text-underline-offset: 0.18em;
+}
+
+.masthead-links a:hover,
+.masthead-links a:focus-visible,
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  color: var(--highlight);
+  text-decoration-color: var(--highlight);
 }
 
 h1,
