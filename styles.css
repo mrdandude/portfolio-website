@@ -252,6 +252,14 @@ ul {
   font: inherit;
   font-size: 0.88rem;
   cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.showcase-tab:hover,
+.showcase-tab:focus-visible {
+  background: #e7e1d8;
+  border-color: #cfc7bc;
+  color: var(--text);
 }
 
 .showcase-tab.is-active,
