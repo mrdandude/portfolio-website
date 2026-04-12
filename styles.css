@@ -164,10 +164,6 @@ ul {
   margin-bottom: 2rem;
 }
 
-.side-section:first-child {
-  margin-top: 2.35rem;
-}
-
 .side-section p {
   font-size: 0.93rem;
 }
@@ -309,10 +305,6 @@ ul {
 
   .side-column {
     position: static;
-  }
-
-  .side-section:first-child {
-    margin-top: 0;
   }
 }
 
