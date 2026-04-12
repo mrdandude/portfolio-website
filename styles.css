@@ -164,6 +164,10 @@ ul {
   margin-bottom: 2rem;
 }
 
+.side-section:first-child {
+  margin-top: 4rem;
+}
+
 .side-section p {
   font-size: 0.93rem;
 }
