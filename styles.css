@@ -1,5 +1,5 @@
 :root {
-  --bg: #f7f5f1;
+  --bg: #ffffff;
   --panel: #ece9e3;
   --text: #111111;
   --muted: #706a63;
@@ -257,8 +257,8 @@ ul {
 
 .showcase-tab:hover,
 .showcase-tab:focus-visible {
-  background: #e7e1d8;
-  border-color: #cfc7bc;
+  background: #f1efeb;
+  border-color: #e1ddd6;
   color: var(--text);
 }
 
@@ -285,7 +285,7 @@ ul {
 
 .showcase-card:hover,
 .showcase-card:focus-within {
-  background: #e7e1d8;
+  background: #f1efeb;
   transform: translateY(-4px);
 }
 
@@ -303,7 +303,7 @@ ul {
 
 .showcase-card:hover .showcase-thumb,
 .showcase-card:focus-within .showcase-thumb {
-  background: #e7e1d8;
+  background: #f1efeb;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
