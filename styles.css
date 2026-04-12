@@ -125,6 +125,10 @@ ul {
   align-items: start;
 }
 
+.work-section {
+  margin-top: 4rem;
+}
+
 .work-meta {
   padding-top: 0.45rem;
   color: var(--faint);
@@ -244,7 +248,7 @@ ul {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
