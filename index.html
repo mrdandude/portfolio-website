@@ -6,67 +6,132 @@
   <title>Daniel Chu | Portfolio</title>
   <meta
     name="description"
-    content="Daniel Chu's portfolio featuring work across marketing, UX, analytics, and strategy."
+    content="Daniel Chu's portfolio featuring project management, marketing, analytics, and AI-assisted technical work."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
-    <header class="masthead" id="top">
-      <div class="masthead-copy">
-        <a class="brand" href="#top">Daniel Chu</a>
-        <p
-          class="tagline"
-          data-text="I’m a Computational Cognitive Science graduate interested in customer-facing technical roles and translating complex problems into clear, practical solutions."
-        ></p>
+    <nav class="hero-nav" id="top" aria-label="Primary navigation">
+      <div class="brand-lockup">
+        <a class="brand" href="#top"><span>Daniel Chu</span></a>
+        <span class="brand-role">Data + Solutions</span>
       </div>
-      <div class="masthead-links">
-        <a href="mailto:danielcchu17@gmail.com">Email</a>
+      <div class="hero-nav-links">
+        <a href="#portfolio">Work</a>
+        <a href="assets/Daniel-Chu-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a href="https://www.linkedin.com/in/dcchu/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:danielcchu17@gmail.com">Email</a>
       </div>
+    </nav>
+
+    <header class="hero">
+
+      <div class="hero-grid">
+        <div class="hero-intro">
+          <h1>
+            I’m Daniel, a data-minded <em>problem solver.</em>
+          </h1>
+          <p
+            class="tagline"
+            data-text="I combine project management, marketing, analytics, and AI to turn complex work into strategic solutions."
+          ></p>
+        </div>
+
+        <div class="hero-experience" aria-label="Selected experience">
+          <div class="hero-experience-list">
+            <div class="hero-experience-row">
+              <span>2026–Now</span>
+              <strong>Compass</strong>
+              <span>Project Manager</span>
+            </div>
+            <div class="hero-experience-row">
+              <span>2025</span>
+              <strong>PagerDuty</strong>
+              <span>Commercial Marketing Intern</span>
+            </div>
+            <div class="hero-experience-row">
+              <span>2023–24</span>
+              <strong>Design Interactive</strong>
+              <span>UI/UX Designer</span>
+            </div>
+            <div class="hero-experience-row">
+              <span>2022–23</span>
+              <strong>California Democratic Party</strong>
+              <span>Social Media Specialist</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </header>
 
-    <main class="portfolio-layout">
+    <main class="portfolio-layout" id="portfolio">
       <section class="showcase-section">
-        <div class="column-label">Portfolio Work</div>
-        <div class="showcase-heading">
-          <h2>Selected college and internship projects</h2>
-          <p>Preview and open a few of the decks, studies, and design documents.</p>
-        </div>
+        <div class="column-label">Projects</div>
 
         <div class="showcase-tabs" role="tablist" aria-label="Portfolio categories">
           <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
           <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="design">Design</button>
           <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="strategy">Strategy</button>
-          <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="technical">Technical Work</button>
+          <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-filter="ai">AI</button>
         </div>
 
         <div class="showcase-grid">
-          <article class="showcase-card" data-category="design technical">
+          <article class="showcase-card" data-category="design technical ai">
             <a class="showcase-thumb" href="assets/work/navify.pdf" target="_blank" rel="noreferrer">
               <img src="assets/work/navify.png" alt="Preview of Navify portfolio PDF">
             </a>
             <div class="showcase-copy">
               <h3>Navify</h3>
-              <p>Fully functioning campus navigation system using various LLMs.</p>
+              <p>Indoor and outdoor navigation system using A* pathfinding, computer vision, and contextual routing models.</p>
               <a href="assets/work/navify.pdf" target="_blank" rel="noreferrer">Open PDF</a>
             </div>
           </article>
 
           <article class="showcase-card" data-category="strategy technical">
-            <a class="showcase-thumb" href="assets/work/digital-touchpoints-analysis.pdf" target="_blank" rel="noreferrer">
-              <img src="assets/work/digital-touchpoints-analysis.png" alt="Preview of Digital Touchpoints Analysis PDF">
+            <a
+              class="showcase-thumb touchpoints-thumb"
+              href="projects/digital-touchpoints-analysis.html"
+              aria-label="View the Digital Touchpoints Analysis case study"
+            >
+              <div class="touchpoints-art" aria-hidden="true">
+                <div class="touchpoints-art-header">
+                  <span>Behavioral strategy</span>
+                  <span>2025</span>
+                </div>
+                <div class="touchpoints-flow">
+                  <div class="touchpoints-signals">
+                    <span>Usage decline</span>
+                    <span>Billing friction</span>
+                    <span>Unclear ROI</span>
+                  </div>
+                  <span class="touchpoints-arrow">&rarr;</span>
+                  <div class="touchpoints-value">
+                    <small>Customer value</small>
+                    <strong>Make impact visible.</strong>
+                    <div class="touchpoints-bars">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="touchpoints-art-footer">
+                  <strong>Digital Touchpoints</strong>
+                  <span>Analysis 01</span>
+                </div>
+              </div>
             </a>
             <div class="showcase-copy">
               <h3>Digital Touchpoints Analysis</h3>
               <p>Research-driven analysis of digital interactions, customer experience, and communication flow.</p>
-              <a href="assets/work/digital-touchpoints-analysis.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+              <a href="projects/digital-touchpoints-analysis.html">View case study</a>
             </div>
           </article>
 
@@ -83,10 +148,10 @@
 
           <article class="showcase-card" data-category="design">
             <a class="showcase-thumb" href="assets/work/final-green-wall.pdf" target="_blank" rel="noreferrer">
-              <img src="assets/work/final-green-wall.png" alt="Preview of Final Green Wall PDF">
+              <img src="assets/work/final-green-wall.png" alt="Preview of GreenWall Connect PDF">
             </a>
             <div class="showcase-copy">
-              <h3>Final Green Wall</h3>
+              <h3>GreenWall Connect</h3>
               <p>A product development project exploring the design process of a sustainable product.</p>
               <a href="assets/work/final-green-wall.pdf" target="_blank" rel="noreferrer">Open PDF</a>
             </div>
@@ -104,150 +169,7 @@
           </article>
         </div>
       </section>
-
-      <aside class="side-column">
-        <section class="side-section">
-          <div class="column-label">About</div>
-          <p>
-            I’m interested in roles where I can bridge customer needs, technical systems, and business outcomes.
-            My background in analytics, technical projects, and customer-facing problem solving has taught me
-            how to diagnose issues, communicate clearly, and turn ambiguity into practical solutions.
-          </p>
-        </section>
-
-        <section class="side-section">
-          <div class="column-label">Highlights</div>
-          <div class="mini-list">
-            <article class="mini-item">
-              <span class="mini-year">Focus</span>
-              <div>
-                <h3>Customer Problem Solving</h3>
-                <p>Understanding customer needs, identifying friction points, and translating them into practical recommendations.</p>
-              </div>
-            </article>
-            <article class="mini-item">
-              <span class="mini-year">Focus</span>
-              <div>
-                <h3>Technical and Analytical Thinking</h3>
-                <p>Using data, structured analysis, and technical project work to reason through complex problems.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="side-section">
-          <div class="column-label">Skills</div>
-          <div class="mini-list">
-            <article class="mini-item">
-              <span class="mini-year">Technical</span>
-              <div>
-                <h3>Python, AI Algorithms (A* Pathfinding, Computer Vision)</h3>
-                <p>Experience with technical prototyping, structured modeling, and applied problem solving in project environments.</p>
-              </div>
-            </article>
-            <article class="mini-item">
-              <span class="mini-year">Analytical</span>
-              <div>
-                <h3>Churn Analysis, Dashboarding, Excel</h3>
-                <p>Comfortable working across customer data, segmentation, forecasting, and structured analysis workflows.</p>
-              </div>
-            </article>
-            <article class="mini-item">
-              <span class="mini-year">Tools</span>
-              <div>
-                <h3>Tableau, Salesforce, Excel, Python, Codex, Claude Design</h3>
-                <p>Comfortable working across analytics, dashboards, tracking, and structured research workflows.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="side-section">
-          <div class="column-label">Contact</div>
-          <div class="contact-links">
-            <a href="mailto:danielcchu17@gmail.com">danielcchu17@gmail.com</a>
-            <a href="https://www.linkedin.com/in/dcchu/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="#top">Back to top</a>
-          </div>
-        </section>
-      </aside>
     </main>
-
-    <section class="work-section">
-      <div class="column-label">Work</div>
-
-      <article class="work-item">
-        <div class="work-meta">2025</div>
-        <div class="work-body">
-          <h2>PagerDuty</h2>
-          <p class="work-summary">
-            Commercial Marketing Intern in San Francisco focused on churn analysis, lifecycle strategy,
-            outbound targeting, and message refinement across commercial accounts.
-          </p>
-          <ul class="work-notes">
-            <li>Analyzed churn trends across 1,200+ customer accounts representing $2.9M+ ARR.</li>
-            <li>Built daily churn dashboards in Salesforce and Tableau for cross-functional teams.</li>
-            <li>Developed 500+ targeted prospect lists that contributed to 200+ outbound opportunities.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="work-item">
-        <div class="work-meta">2023-2024</div>
-        <div class="work-body">
-          <h2>Davis Design Interactive</h2>
-          <p class="work-summary">
-            Conducted user research and usability testing to uncover friction points and translate
-            findings into stronger digital product recommendations.
-          </p>
-          <ul class="work-notes">
-            <li>Connected user insights to clearer product functionality and interface decisions.</li>
-            <li>Worked in a research-backed design process grounded in behavior and usability.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="work-item">
-        <div class="work-meta">2022-2023</div>
-        <div class="work-body">
-          <h2>California Democratic Party</h2>
-          <p class="work-summary">
-            Developed social-first campaign work and platform-specific messaging to support statewide
-            initiatives and public engagement.
-          </p>
-          <ul class="work-notes">
-            <li>Generated 15K+ engagements through TikTok and Instagram campaigns.</li>
-            <li>Tailored messaging to audience and channel rather than using one-size-fits-all content.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="work-item">
-        <div class="work-meta">2021-2022</div>
-        <div class="work-body">
-          <h2>Joe Bike</h2>
-          <p class="work-summary">
-            Ran local marketing and outreach focused on subscriber growth, promotional messaging,
-            and faster inventory conversion.
-          </p>
-          <ul class="work-notes">
-            <li>Generated 500+ subscribers and $12K+ in monthly revenue from campus-facing campaigns.</li>
-            <li>Helped sell out inventory within two months through better outreach and promotions.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="work-item">
-        <div class="work-meta">2021-2022</div>
-        <div class="work-body">
-          <h2>Home Depot</h2>
-          <p class="work-summary">
-            Built a foundation in consultative communication, customer needs analysis, and guiding
-            decisions in a fast-moving retail environment.
-          </p>
-        </div>
-      </article>
-    </section>
   </div>
 
   <script src="script.js"></script>
