@@ -30,17 +30,13 @@ body {
   background: rgba(250, 251, 252, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.94rem;
 }
 
 .case-brand-lockup {
   display: flex;
   gap: 1rem;
-}
-
-.case-brand-role {
-  color: var(--case-muted);
 }
 
 .case-brand:hover,
@@ -126,10 +122,17 @@ body {
   text-transform: uppercase;
 }
 
+.case-eyebrow {
+  max-width: 62ch;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .case-hero h1 {
   max-width: 16ch;
   margin-top: 1.15rem;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(3.6rem, 7vw, 6.6rem);
   font-weight: 400;
   letter-spacing: -0.045em;
@@ -180,7 +183,7 @@ body {
 
 .cover-arrow {
   color: rgba(63, 72, 84, 0.45);
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
 }
 
@@ -201,7 +204,7 @@ body {
 .value-card strong {
   display: block;
   margin-top: 2.5rem;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -272,7 +275,7 @@ body {
 .problem-number,
 .principle-index {
   color: var(--case-muted);
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
 }
 
@@ -402,7 +405,7 @@ body {
 
 .metric-row strong {
   display: block;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
   font-weight: 400;
 }
@@ -533,10 +536,6 @@ body {
     padding: 0.9rem 0;
   }
 
-  .case-brand-role {
-    display: none;
-  }
-
   .case-header-links {
     width: 100%;
     justify-content: space-between;
@@ -606,5 +605,94 @@ body {
   .case-actions {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+.clerestory-case {
+  --case-ink: #173d2a;
+  --case-muted: #6b766f;
+  --case-rule: rgba(23, 61, 42, 0.16);
+  background: #f4f1e9;
+}
+
+.clerestory-case .case-header {
+  background: rgba(244, 241, 233, 0.88);
+}
+
+.clerestory-case .case-hero h1 {
+  max-width: 14ch;
+}
+
+.clerestory-gallery {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: 2.5rem;
+}
+
+.clerestory-gallery-process {
+  grid-template-columns: 1.08fr 0.92fr;
+}
+
+.clerestory-gallery-final {
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: start;
+}
+
+.clerestory-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.clerestory-figure-wide {
+  grid-row: span 2;
+}
+
+.clerestory-figure-tall {
+  grid-row: span 2;
+}
+
+.clerestory-figure img {
+  width: 100%;
+  display: block;
+  background: #fff;
+  object-fit: cover;
+}
+
+.clerestory-gallery-process .clerestory-figure-wide img {
+  aspect-ratio: 4 / 5;
+}
+
+.clerestory-gallery-process .clerestory-figure:not(.clerestory-figure-wide) img {
+  aspect-ratio: 16 / 9;
+}
+
+.clerestory-gallery-final .clerestory-figure-tall img {
+  aspect-ratio: 2 / 3;
+}
+
+.clerestory-gallery-final .clerestory-figure:not(.clerestory-figure-tall) img {
+  aspect-ratio: 3 / 2;
+}
+
+.clerestory-figure figcaption {
+  margin-top: 0.65rem;
+  color: var(--case-muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 680px) {
+  .clerestory-gallery-process,
+  .clerestory-gallery-final {
+    grid-template-columns: 1fr;
+  }
+
+  .clerestory-figure-wide,
+  .clerestory-figure-tall {
+    grid-row: auto;
+  }
+
+  .clerestory-gallery-process .clerestory-figure-wide img,
+  .clerestory-gallery-final .clerestory-figure-tall img {
+    aspect-ratio: auto;
   }
 }

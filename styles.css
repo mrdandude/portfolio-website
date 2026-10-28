@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Geist";
+  src: url("assets/fonts/geist/Geist-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("assets/fonts/geist/Geist-VariableItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --bg: #ffffff;
   --panel: #ece9e3;
@@ -25,11 +41,12 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 78% 18%, rgba(168, 255, 114, 0.1), transparent 24rem),
     var(--bg);
   color: var(--text);
-  font-family: "Geist", Arial, Helvetica, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -72,7 +89,7 @@ li {
 
 h2,
 h3 {
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.1;
   letter-spacing: -0.02em;
   font-weight: 400;
@@ -89,13 +106,28 @@ ul {
 }
 
 .hero {
+  --hero-bg-y: 33%;
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #e6e6e2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: calc(50% - 50vw);
+  bottom: 0;
+  left: calc(50% - 50vw);
+  border-block: 1px solid rgba(255, 255, 255, 0.16);
+  background: url("assets/hero-aurora.jpg") center var(--hero-bg-y) / cover no-repeat;
 }
 
 .hero-nav {
   position: sticky;
+  isolation: isolate;
   top: 0;
   z-index: 100;
   min-height: 4rem;
@@ -103,8 +135,18 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  border-bottom: 1px solid #e6e6e2;
-  background: rgba(255, 255, 255, 0.92);
+}
+
+.hero-nav::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: calc(50% - 50vw);
+  bottom: 0;
+  left: calc(50% - 50vw);
+  border-bottom: 1px solid rgba(230, 230, 226, 0.72);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -116,15 +158,10 @@ ul {
 }
 
 .brand {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.94rem;
   font-weight: 400;
   letter-spacing: 0;
-}
-
-.brand-role {
-  color: var(--faint);
-  font-weight: 400;
 }
 
 .brand:hover,
@@ -146,7 +183,7 @@ ul {
   align-items: center;
   gap: clamp(1rem, 2.4vw, 2.4rem);
   color: var(--muted);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.94rem;
   letter-spacing: 0;
 }
@@ -157,6 +194,7 @@ ul {
   gap: clamp(3rem, 7vw, 7rem);
   align-items: start;
   padding: clamp(7rem, 16vh, 10rem) 0 2.6rem;
+  color: #ffffff;
 }
 
 .hero-intro,
@@ -185,7 +223,7 @@ ul {
 
 .hero-intro h1 {
   max-width: 12ch;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(3.15rem, 4.4vw, 3.5rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -200,6 +238,7 @@ ul {
   min-height: 3.2em;
   max-width: 34rem;
   margin-top: 1.6rem;
+  color: rgba(255, 255, 255, 0.84);
   font-size: clamp(0.92rem, 1.2vw, 1.05rem);
 }
 
@@ -228,8 +267,8 @@ ul {
 }
 
 .hero-experience-row > span:first-child {
-  color: var(--faint);
-  font-family: "Source Serif 4", Georgia, serif;
+  color: rgba(255, 255, 255, 0.68);
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.05rem;
   font-style: italic;
 }
@@ -239,7 +278,7 @@ ul {
 }
 
 .hero-experience-row > span:last-child {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-scroll {
@@ -450,6 +489,10 @@ ul {
   object-position: top center;
 }
 
+.clerestory-card-thumb img {
+  object-position: center;
+}
+
 .touchpoints-thumb {
   overflow: hidden;
   background: #dce6ef;
@@ -484,7 +527,7 @@ ul {
 }
 
 .touchpoints-art-footer strong {
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(0.9rem, 1.7vw, 1.25rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -513,7 +556,7 @@ ul {
 
 .touchpoints-arrow {
   color: rgba(63, 72, 84, 0.45);
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(1.2rem, 2.7vw, 2rem);
 }
 
@@ -537,7 +580,7 @@ ul {
 .touchpoints-value strong {
   max-width: 9ch;
   margin-top: auto;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: clamp(1rem, 2.4vw, 1.7rem);
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -625,6 +668,63 @@ ul {
   }
 }
 
+.site-footer {
+  width: 100vw;
+  margin-top: clamp(1.5rem, 4vw, 3.5rem);
+  margin-left: calc(50% - 50vw);
+  padding: clamp(0.75rem, 2vw, 1.5rem) 0 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.site-footer-name {
+  width: 100%;
+  color: #c7c7c7;
+  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(4rem, 22vw, 20rem);
+  font-weight: 750;
+  line-height: 0.76;
+  letter-spacing: -0.08em;
+  text-align: left;
+  text-indent: -0.09em;
+  white-space: nowrap;
+  transform: scaleX(1.0375);
+  transform-origin: left center;
+  background-image: url("assets/hero-aurora.jpg");
+  background-repeat: no-repeat;
+  background-position: center var(--footer-bg-y, 20%);
+  background-size: 115vw auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fun-shell {
+  min-height: 100vh;
+}
+
+.fun-page {
+  display: grid;
+  width: 100vw;
+  min-height: calc(100vh - 4rem);
+  margin-left: calc(50% - 50vw);
+  padding: 2rem;
+  background: url("assets/hero-aurora.jpg") center 38% / cover no-repeat;
+  place-items: center;
+}
+
+.fun-hero {
+  color: #fff;
+  text-align: center;
+}
+
+.fun-hero h1 {
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-intro,
   .hero-experience,
@@ -681,10 +781,6 @@ ul {
     padding: 0.9rem 0;
   }
 
-  .brand-role {
-    display: none;
-  }
-
   .hero-nav-links {
     width: 100%;
     flex-wrap: wrap;
@@ -732,6 +828,11 @@ ul {
 
   .showcase-grid {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
   }
 
 }

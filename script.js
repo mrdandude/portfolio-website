@@ -31,6 +31,65 @@ if (tagline) {
   }
 }
 
+const hero = document.querySelector(".hero");
+
+if (hero && !prefersReducedMotion) {
+  let heroFrameRequested = false;
+
+  const updateHeroBackground = () => {
+    const scrollRange = Math.max(hero.offsetHeight, window.innerHeight * 0.45);
+    const progress = Math.min(Math.max(window.scrollY / scrollRange, 0), 1);
+    const backgroundPosition = 33 + progress * 67;
+
+    hero.style.setProperty("--hero-bg-y", `${backgroundPosition.toFixed(2)}%`);
+    heroFrameRequested = false;
+  };
+
+  const requestHeroBackgroundUpdate = () => {
+    if (!heroFrameRequested) {
+      window.requestAnimationFrame(updateHeroBackground);
+      heroFrameRequested = true;
+    }
+  };
+
+  window.addEventListener("scroll", requestHeroBackgroundUpdate, { passive: true });
+  window.addEventListener("resize", requestHeroBackgroundUpdate);
+  updateHeroBackground();
+}
+
+const footerName = document.querySelector(".site-footer-name");
+
+if (footerName && !prefersReducedMotion) {
+  let footerFrameRequested = false;
+
+  const updateFooterBackground = () => {
+    const rect = footerName.getBoundingClientRect();
+    const travel = window.innerHeight + rect.height;
+    const progress = Math.min(
+      Math.max((window.innerHeight - rect.top) / travel, 0),
+      1
+    );
+    const backgroundPosition = 5 + progress * 90;
+
+    footerName.style.setProperty(
+      "--footer-bg-y",
+      `${backgroundPosition.toFixed(2)}%`
+    );
+    footerFrameRequested = false;
+  };
+
+  const requestFooterBackgroundUpdate = () => {
+    if (!footerFrameRequested) {
+      window.requestAnimationFrame(updateFooterBackground);
+      footerFrameRequested = true;
+    }
+  };
+
+  window.addEventListener("scroll", requestFooterBackgroundUpdate, { passive: true });
+  window.addEventListener("resize", requestFooterBackgroundUpdate);
+  updateFooterBackground();
+}
+
 revealTargets.forEach((element) => {
   element.classList.add("reveal");
 });
