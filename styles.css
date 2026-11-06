@@ -394,7 +394,7 @@ ul {
 }
 
 .showcase-section {
-  margin-top: 4rem;
+  margin-top: clamp(5rem, 9vw, 9rem);
 }
 
 .showcase-heading {
@@ -449,55 +449,63 @@ ul {
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4rem 1.35rem;
+  gap: clamp(7rem, 11vw, 11rem) clamp(3rem, 6vw, 7rem);
 }
 
 .showcase-card {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: clamp(220px, 26vw, 340px) auto;
   align-content: start;
-  gap: 0.75rem;
+  min-width: 0;
+  gap: 1rem;
   padding: 0;
   background: transparent;
-  transition: transform 180ms ease;
-}
-
-.showcase-card:hover,
-.showcase-card:focus-within {
-  transform: translateY(-3px);
 }
 
 .showcase-thumb {
-  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: #ebe7e0;
-  transition: background-color 180ms ease, box-shadow 180ms ease;
+  overflow: visible;
+  background: transparent;
 }
 
 .showcase-thumb img {
   display: block;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.showcase-card:nth-child(1) .showcase-thumb img {
+  width: 68%;
+  height: 68%;
+}
+
+.showcase-card:nth-child(2) .two-page-cover {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: 78%;
 }
 
 .greenwall-card-thumb img {
-  object-position: center;
-  transform: scale(1.58);
-  transform-origin: 29% 55%;
+  width: 84%;
+  height: 68%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 24% center;
 }
 
 .report-pages-thumb {
+  overflow: hidden;
   background: #fff;
 }
 
 .two-page-cover {
-  width: 100%;
-  height: 100%;
+  width: 94%;
+  height: 74%;
   min-width: 0;
   min-height: 0;
   display: grid;
@@ -524,10 +532,16 @@ ul {
   object-position: top left;
 }
 
+.showcase-card:nth-child(6) .two-page-cover {
+  width: 78%;
+  height: 62%;
+}
+
 .clerestory-card-thumb {
   position: relative;
   isolation: isolate;
   background: #fff;
+  overflow: hidden;
 }
 
 .clerestory-card-art {
@@ -560,7 +574,7 @@ ul {
 }
 
 .clerestory-card-coffee-slide img {
-  height: 96% !important;
+  height: 82% !important;
 }
 
 .clerestory-card-island-slide {
@@ -568,19 +582,19 @@ ul {
 }
 
 .clerestory-card-island-slide img {
-  height: 88% !important;
+  height: 72% !important;
   transform: rotate(-1deg);
 }
 
 .clerestory-card-tote-slide {
   gap: 1%;
-  padding: 3% 5%;
+  padding: 8% 4%;
   animation-delay: -0.5s;
 }
 
 .clerestory-card-tote-slide img {
   width: auto;
-  height: 88% !important;
+  height: 78% !important;
   max-width: 29%;
 }
 
@@ -609,12 +623,12 @@ ul {
 
 .touchpoints-thumb {
   overflow: hidden;
-  background: #dce6ef;
+  background: transparent;
 }
 
 .touchpoints-art {
-  width: 100%;
-  height: 100%;
+  width: 88%;
+  height: 72%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -721,11 +735,6 @@ ul {
 .touchpoints-bars i:nth-child(4) { height: 72%; }
 .touchpoints-bars i:nth-child(5) { height: 92%; }
 
-.showcase-card:hover .showcase-thumb,
-.showcase-card:focus-within .showcase-thumb {
-  box-shadow: none;
-}
-
 .showcase-copy {
   display: grid;
   grid-template-rows: auto auto;
@@ -734,13 +743,15 @@ ul {
 }
 
 .showcase-copy h3 {
-  font-size: 0.86rem;
-  line-height: 1.25;
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .showcase-copy p {
-  font-size: 0.76rem;
-  line-height: 1.4;
+  color: var(--text);
+  font-size: 0.62rem;
+  line-height: 1.25;
 }
 
 .showcase-card.is-hidden {
@@ -784,7 +795,7 @@ ul {
 
 .site-footer {
   width: 100vw;
-  margin-top: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(6rem, 12vw, 12rem);
   margin-left: calc(50% - 50vw);
   padding: clamp(0.75rem, 2vw, 1.5rem) 0 0;
   overflow: hidden;
@@ -884,6 +895,7 @@ ul {
 
   .showcase-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6rem clamp(2rem, 6vw, 4rem);
   }
 }
 
@@ -920,10 +932,6 @@ ul {
     min-height: 4.4em;
   }
 
-  .showcase-thumb {
-    aspect-ratio: 4 / 3;
-  }
-
   .hero-experience-row {
     grid-template-columns: 62px 1fr;
     gap: 0.15rem 0.75rem;
@@ -946,6 +954,11 @@ ul {
 
   .showcase-grid {
     grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .showcase-card {
+    grid-template-rows: min(74vw, 320px) auto;
   }
 
   .site-footer {

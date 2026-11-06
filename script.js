@@ -1,5 +1,5 @@
 const revealTargets = document.querySelectorAll(
-  ".work-item, .side-section, .showcase-card"
+  ".work-item, .side-section"
 );
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
