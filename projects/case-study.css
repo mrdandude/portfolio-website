@@ -749,13 +749,39 @@ body {
 
 .marketing-assets-gallery {
   width: 90%;
+  height: 100%;
   min-height: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2vh, 1.5rem) clamp(1.25rem, 3vw, 2.5rem);
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
   justify-self: center;
+}
+
+.marketing-assets-viewer {
+  position: relative;
+  min-height: 0;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  overflow: hidden;
+}
+
+.marketing-assets-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.marketing-assets-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.marketing-assets-gallery-brochure {
+  width: 78%;
 }
 
 .marketing-assets-figure {
@@ -782,6 +808,54 @@ body {
   text-align: center;
 }
 
+.marketing-assets-click-zone {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: none;
+}
+
+.marketing-assets-click-zone-left {
+  left: 0;
+}
+
+.marketing-assets-click-zone-right {
+  right: 0;
+}
+
+.marketing-assets-cursor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(21, 21, 21, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(21, 21, 21, 0.1);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 120ms ease;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.marketing-assets-click-zone:hover .marketing-assets-cursor,
+.marketing-assets-click-zone:focus-visible .marketing-assets-cursor {
+  opacity: 1;
+}
+
+.marketing-assets-mobile-nav {
+  display: none;
+}
+
 @media (max-width: 680px) {
   .marketing-assets-main {
     height: auto;
@@ -806,10 +880,25 @@ body {
 
   .marketing-assets-gallery {
     width: 100%;
+    height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: none;
     gap: 3.5rem;
     margin-top: 3.5rem;
+  }
+
+  .marketing-assets-viewer {
+    min-height: 0;
+    margin-top: 3.5rem;
+    overflow: visible;
+  }
+
+  .marketing-assets-slide {
+    position: absolute;
+  }
+
+  .marketing-assets-slide.is-active {
+    position: relative;
   }
 
   .marketing-assets-figure {
@@ -819,5 +908,33 @@ body {
   .marketing-assets-figure img {
     height: auto;
     aspect-ratio: 2 / 1;
+  }
+
+  .marketing-assets-gallery-brochure .marketing-assets-figure img {
+    aspect-ratio: auto;
+  }
+
+  .marketing-assets-click-zone {
+    display: none;
+  }
+
+  .marketing-assets-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--case-rule);
+    color: var(--case-muted);
+    font-size: 0.75rem;
+  }
+
+  .marketing-assets-mobile-nav button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--case-ink);
+    font: inherit;
   }
 }
