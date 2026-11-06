@@ -505,8 +505,10 @@ ul {
 
 .greenwall-card-thumb img {
   object-position: center;
-  transform: scale(1.58);
+  transform: translateZ(0) scale(1.58);
   transform-origin: 29% 55%;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .report-pages-thumb {
