@@ -781,9 +781,10 @@ body {
 }
 
 .marketing-assets-gallery-brochure {
-  width: 90%;
+  width: 100%;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
+  column-gap: clamp(0.4rem, 0.8vw, 0.8rem);
 }
 
 .marketing-assets-figure {
