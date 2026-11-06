@@ -190,8 +190,8 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(460px, 0.85fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 0.9fr);
+  gap: clamp(4rem, 7vw, 7rem);
   align-items: start;
   padding: clamp(7rem, 16vh, 10rem) 0 2.6rem;
   color: #ffffff;
@@ -232,6 +232,10 @@ ul {
 
 .hero-intro h1 em {
   font-weight: 400;
+}
+
+.hero-lead {
+  display: block;
 }
 
 .tagline {
