@@ -193,7 +193,7 @@ ul {
   grid-template-columns: minmax(0, 1fr) minmax(460px, 0.9fr);
   gap: clamp(4rem, 7vw, 7rem);
   align-items: start;
-  padding: clamp(7rem, 16vh, 10rem) 0 2.6rem;
+  padding: 2.6rem 0;
   color: #ffffff;
 }
 
@@ -874,7 +874,7 @@ ul {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
-    padding: 5.5rem 0 2rem;
+    padding: 2.6rem 0;
   }
 
   .hero-intro h1 {
@@ -927,7 +927,7 @@ ul {
 
   .hero-grid {
     gap: 3.5rem;
-    padding-top: 4.5rem;
+    padding-top: 2.6rem;
   }
 
   .hero-intro h1 {
