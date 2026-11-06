@@ -747,6 +747,11 @@ body {
   font-size: 0.78rem;
 }
 
+.marketing-assets-heading [data-gallery-counter] {
+  display: block;
+  margin-top: 0.15rem;
+}
+
 .marketing-assets-gallery {
   width: 90%;
   height: 100%;
