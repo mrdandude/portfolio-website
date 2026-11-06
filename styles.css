@@ -625,6 +625,74 @@ ul {
   }
 }
 
+.marketing-assets-card-thumb {
+  position: relative;
+  isolation: isolate;
+  background: #fff;
+}
+
+.marketing-assets-card-art,
+.marketing-assets-card-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.marketing-assets-card-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5%;
+  opacity: 0;
+  pointer-events: none;
+  animation: marketing-assets-cover-cycle 2s step-end infinite;
+}
+
+.marketing-assets-card-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.marketing-assets-brochure-slide {
+  animation-delay: 0s;
+}
+
+.marketing-assets-sleeper-slide {
+  animation-delay: -1.5s;
+}
+
+.marketing-assets-kathy-slide {
+  animation-delay: -1s;
+}
+
+.marketing-assets-laver-slide {
+  animation-delay: -0.5s;
+}
+
+@keyframes marketing-assets-cover-cycle {
+  0%,
+  24.99% {
+    opacity: 1;
+  }
+
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-assets-card-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .marketing-assets-brochure-slide {
+    opacity: 1;
+  }
+}
+
 .touchpoints-thumb {
   overflow: hidden;
   background: #dce6ef;
