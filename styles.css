@@ -190,8 +190,8 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.96fr);
-  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(460px, 0.85fr);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: start;
   padding: clamp(7rem, 16vh, 10rem) 0 2.6rem;
   color: #ffffff;
@@ -222,12 +222,12 @@ ul {
 }
 
 .hero-intro h1 {
-  max-width: 12ch;
+  max-width: 100%;
   font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(3.15rem, 4.4vw, 3.5rem);
+  font-size: clamp(1.95rem, 2.7vw, 2.2rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .hero-intro h1 em {
@@ -860,7 +860,7 @@ ul {
   }
 
   .hero-intro h1 {
-    max-width: 13ch;
+    max-width: 26ch;
   }
 
   .hero-experience {
@@ -913,7 +913,7 @@ ul {
   }
 
   .hero-intro h1 {
-    font-size: clamp(2.9rem, 13vw, 3.5rem);
+    font-size: clamp(2rem, 8.5vw, 2.65rem);
   }
 
   .tagline {
