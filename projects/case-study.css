@@ -781,7 +781,9 @@ body {
 }
 
 .marketing-assets-gallery-brochure {
-  width: 78%;
+  width: 90%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
 }
 
 .marketing-assets-figure {
