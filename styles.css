@@ -691,6 +691,156 @@ ul {
   }
 }
 
+.email-marketing-card-thumb {
+  position: relative;
+  isolation: isolate;
+  background: #fff;
+  color: #111;
+}
+
+.email-marketing-card-art,
+.email-marketing-card-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.email-marketing-card-slide {
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  animation: email-marketing-cover-cycle 1.5s step-end infinite;
+}
+
+.email-marketing-card-slide small {
+  display: block;
+  margin: 0;
+  font-size: clamp(0.38rem, 0.62vw, 0.58rem);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.email-marketing-card-slide strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.email-marketing-intro-slide {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  padding: 7% 7.5%;
+  animation-delay: 0s;
+}
+
+.email-marketing-masthead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 11%;
+  border-right: 1px solid #d8d4cd;
+  font-size: clamp(0.4rem, 0.7vw, 0.62rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.email-marketing-masthead img {
+  width: clamp(2.2rem, 6vw, 4.8rem);
+  height: auto;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.email-marketing-intro-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 9%;
+}
+
+.email-marketing-intro-copy strong {
+  max-width: 9em;
+  font-size: clamp(1rem, 2.25vw, 2rem);
+}
+
+.email-marketing-property-slide {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  animation-delay: -1s;
+}
+
+.email-marketing-property-slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.email-marketing-property-copy,
+.email-marketing-recognition-copy {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 10% 8%;
+}
+
+.email-marketing-property-copy strong,
+.email-marketing-recognition-copy strong {
+  margin-top: auto;
+  font-size: clamp(0.9rem, 1.72vw, 1.55rem);
+}
+
+.email-marketing-property-copy > span,
+.email-marketing-recognition-copy > span {
+  margin-top: 8%;
+  font-size: clamp(0.38rem, 0.65vw, 0.58rem);
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.email-marketing-recognition-slide {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  animation-delay: -0.5s;
+}
+
+.email-marketing-recognition-slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.email-marketing-recognition-copy {
+  padding: 8% 9% 7%;
+}
+
+@keyframes email-marketing-cover-cycle {
+  0%,
+  33.32% {
+    opacity: 1;
+  }
+
+  33.33%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .email-marketing-card-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .email-marketing-intro-slide {
+    opacity: 1;
+  }
+}
+
 .touchpoints-thumb {
   overflow: hidden;
   background: #dce6ef;
