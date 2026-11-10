@@ -46,4 +46,38 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const viewer = document.querySelector('.marketing-assets-viewer');
+let touchStart = null;
+let ignoreClickUntil = 0;
+
+viewer.addEventListener('touchstart', event => {
+  touchStart = event.touches.length === 1
+    ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+    : null;
+}, { passive: true });
+
+viewer.addEventListener('touchmove', event => {
+  if (event.touches.length !== 1) touchStart = null;
+}, { passive: true });
+
+viewer.addEventListener('touchcancel', () => { touchStart = null; });
+
+viewer.addEventListener('touchend', event => {
+  if (!touchStart || event.touches.length) return;
+  const dx = event.changedTouches[0].clientX - touchStart.x;
+  const dy = event.changedTouches[0].clientY - touchStart.y;
+  touchStart = null;
+  // Preserve vertical gestures and prevent a swipe from also triggering a click.
+  if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+  ignoreClickUntil = Date.now() + 500;
+  showSlide(activeIndex + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+viewer.addEventListener('click', event => {
+  if (Date.now() < ignoreClickUntil) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}, true);
+
 showSlide(0);
