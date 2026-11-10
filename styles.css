@@ -692,13 +692,24 @@ ul {
 }
 
 .email-marketing-card-thumb {
-  background: #fff;
+  position: relative;
+  align-items: flex-start;
+  padding-top: 0;
+  background: transparent;
 }
 
-.email-marketing-card-thumb > img {
+.email-marketing-cover-frame {
+  display: block;
+  width: 61%;
+  padding: 5px;
+  background: #f7f7f7;
+  flex: 0 0 auto;
+}
+
+.email-marketing-cover-frame > img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: top center;
 }
 
